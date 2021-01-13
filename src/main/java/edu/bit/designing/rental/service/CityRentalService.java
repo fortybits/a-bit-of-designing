@@ -1,6 +1,7 @@
-package edu.bit.designing.rental.entities;
+package edu.bit.designing.rental.service;
 
-import edu.bit.designing.rental.request.BranchAddRequest;
+import edu.bit.designing.rental.entities.Vehicle;
+import edu.bit.designing.rental.request.BranchVehicleRequest;
 
 import java.util.HashMap;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.Map;
 
 public abstract class CityRentalService {
 
-    abstract void addBranch(String branchName, List<BranchAddRequest> branchAddRequests);
+    abstract void addBranch(String branchName, List<BranchVehicleRequest> branchAddRequests);
 
     abstract void addVehicle(String branchName, Vehicle vehicle);
 

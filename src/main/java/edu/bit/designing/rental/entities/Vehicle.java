@@ -7,7 +7,7 @@ public class Vehicle {
     VehicleType vehicleType;
     Rate rate;
 
-    enum VehicleType {
+    public enum VehicleType {
         CAR, BIKE
     }
 

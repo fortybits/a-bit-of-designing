@@ -2,7 +2,7 @@ package edu.bit.designing.rental.request;
 
 import edu.bit.designing.rental.entities.VehicleType;
 
-public class BranchAddRequest {
+public class BranchVehicleRequest {
     VehicleType vehicleType;
     int quantity;
     int price;
