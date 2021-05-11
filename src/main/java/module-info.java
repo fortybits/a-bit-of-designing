@@ -3,5 +3,6 @@ module a.bit.of.designing {
 
     exports edu.bit.designing.messaging;
     exports edu.bit.designing.movement;
+    exports edu.bit.designing.parking;
     exports edu.bit.designing.splitwise;
 }

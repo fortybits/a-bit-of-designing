@@ -11,7 +11,6 @@ import java.util.Map;
 
 public class ExpenseSharingDriver {
 
-
     public static void main(String[] args) throws InvalidRequestException {
         ExpenseSharingService expenseSharingService = new ExpenseSharingService();
         List<User> users = Arrays.asList(

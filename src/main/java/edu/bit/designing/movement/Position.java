@@ -6,10 +6,14 @@ import lombok.Getter;
 
 @Getter
 @EqualsAndHashCode
-@AllArgsConstructor
 public class Position {
     int row;
     int column;
+
+    public Position(int row, int column) {
+        this.row = row;
+        this.column = column;
+    }
 
     public Position clone() {
         return new Position(row, column);

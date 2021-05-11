@@ -7,9 +7,5 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
-    String userId;
-    String name;
-    String email;
-    String mobileNumber;
+public record User(String userId, String name, String email, String mobileNumber) {
 }

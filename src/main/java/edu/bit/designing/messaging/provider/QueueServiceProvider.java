@@ -45,14 +45,14 @@ public class QueueServiceProvider implements QueueService {
     // currently mocked
     private IMQueue getById(String queueId) {
         IMQueue imQueue = new IMQueue();
-        Set<String> consumers = new HashSet<String>();
+        Set<String> consumers = new HashSet<>();
         consumers.add("C1");
         consumers.add("C2");
         consumers.add("C3");
         imQueue.setConsumerIds(consumers);
         imQueue.setQueueId(queueId);
         imQueue.setProducerId("P1");
-        LinkedList<Message> messages = new LinkedList<Message>();
+        LinkedList<Message> messages = new LinkedList<>();
         messages.add(Message.builder().messageId("M1").text("Dummy").build());
         imQueue.setMessages(messages); // mocking
         return imQueue;

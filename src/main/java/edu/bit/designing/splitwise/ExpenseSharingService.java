@@ -21,14 +21,14 @@ public class ExpenseSharingService {
 
     boolean createExpenses(ExpenseRequest expenseRequest) throws InvalidRequestException {
         validateRequestMeta(expenseRequest);
-        String userWhoPaid = expenseRequest.getPayingUser();
-        List<String> usersWhoOwe = expenseRequest.getUsers();
+        String userWhoPaid = expenseRequest.payingUser();
+        List<String> usersWhoOwe = expenseRequest.users();
         Map<String, Double> userToAmountOwed = new HashMap<>();
-        List<Double> shares = expenseRequest.getShareValues();
+        List<Double> shares = expenseRequest.shareValues();
         List<Double> actualPriceShared = new ArrayList<>();
-        switch (expenseRequest.getExpenseType()) {
+        switch (expenseRequest.expenseType()) {
             case EQUAL:
-                double share = expenseRequest.getShareValues().get(0) / expenseRequest.getNumberOfUsers();
+                double share = expenseRequest.shareValues().get(0) / expenseRequest.numberOfUsers();
                 actualPriceShared = IntStream.range(0, usersWhoOwe.size())
                         .mapToObj(i -> share)
                         .collect(Collectors.toList());
@@ -37,8 +37,8 @@ public class ExpenseSharingService {
                 actualPriceShared = shares;
                 return distributeExpenses(userWhoPaid, usersWhoOwe, userToAmountOwed, actualPriceShared);
             case PERCENT:
-                for (Double percentage : expenseRequest.getShareValues()) {
-                    actualPriceShared.add((percentage * expenseRequest.getTotalAmount()) / 100);
+                for (Double percentage : expenseRequest.shareValues()) {
+                    actualPriceShared.add((percentage * expenseRequest.totalAmount()) / 100);
                 }
                 return distributeExpenses(userWhoPaid, usersWhoOwe, userToAmountOwed, actualPriceShared);
             default:
