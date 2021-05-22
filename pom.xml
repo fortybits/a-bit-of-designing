@@ -8,7 +8,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.release>16</maven.compiler.release>
+        <maven.compiler.release>17</maven.compiler.release>
     </properties>
 
     <dependencies>
@@ -39,7 +39,6 @@
                 <version>3.8.1</version>
                 <configuration>
                     <fork>true</fork>
-                    <source>16</source>
                     <compilerArgs>
                         <arg>--enable-preview</arg>
                         <arg>-Xlint:all</arg>
